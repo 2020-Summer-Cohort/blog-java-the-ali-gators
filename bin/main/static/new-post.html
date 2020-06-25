@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/new-post-layout.css" />
+    <link rel="stylesheet" href="./css/new-post-style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Author's Posts</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="./index.html">The Foxes Blog</a></h1>
+      <nav>
+        <h3 class="nav-title">NAVIGATION</h3>
+        <div>
+          <section>
+            <h4 class="home">
+              <a href="./index.html">Home</a>
+            </h4>
+          </section>
+          <section>
+            <h4 class="new-post">
+              <a href="./new-post.html">Create New Post</a>
+            </h4>
+          </section>
+          <section>
+            <h4>Categories</h4>
+            <ul class="categories">
+              <li><a href="./category.html">In Media</a></li>
+            </ul>
+          </section>
+          <section>
+            <h4>Authors</h4>
+            <ul class="authors">
+              <li><a href="./author.html">Alisyn</a></li>
+            </ul>
+          </section>
+          <section>
+            <h4>Tags</h4>
+            <ul class="tags">
+              <li><a href="./tag.html">#BadStereotype</a></li>
+            </ul>
+          </section>
+        </div>
+      </nav>
+    </header>
+    <main>
+        <section>
+            <h2>New Post</h2>
+            <form action="/post/add" method="POST" class="new-post-form">
+                <li><label for="new-post-category-input" class="form__label">Category: </label>
+                <select name="category" id="new-post-category-input">               
+                    <option value="In Media">In Media</option>
+                </select></li>
+                <li><label for="new-post-author-input" class="form__label">Author: </label>
+                <select name="author" id="new-post-author-input">               
+                    <option value="Alisyn">Alisyn</option>
+                </select></li>
+                <li><label for="new-post-title-input" class="form__label">Title: </label>
+                <input type="text" name="title" id="new-post-title-input"></li>
+                <li><label for="new-post-date-input" class="form__label">Date: </label>
+                <input type="date" name="publishDate" id="new-post-date-input"></li>
+                <li><label for="new-post-tags-input" class="form__label">Tags: </label>
+                <input type="text" name="tags" id="new-post-tags-input" placeholder="Separate tags with a space"></li>
+                <li class="content"><label for="new-post-content-input" class="form__label">Content: </label>
+                <textarea name="content" id="new-post-content-input" placeholder="Content"></textarea></li>
+                <li><button type="submit">Submit</button></li>
+            </form>
+        </section>
+        <div class="new-categories">
+        <section class="new-category">
+            <form action="/category/add" method="POST" class="new-category-form">
+                <label for="new-category-input" class="form__label">Add Category: </label>
+                <input type="text" name="category" id="new-category-input">
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section class="new-author">
+            <form action="/author/add" method="POST" class="new-author-form">
+                <label for="new-author-input" class="form__label">Add Author: </label>
+                <input type="text" name="category" id="new-author-input">
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section class="new-tag">
+            <form action="/tag/add" method="POST" class="new-tag-form">
+                <label for="new-tag-input" class="form__label">Add Tag: </label>
+                <input type="text" name="category" id="new-tag-input">
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+    </main>
+  </body>
+</html>

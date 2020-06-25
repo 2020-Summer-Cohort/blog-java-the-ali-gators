@@ -1,0 +1,62 @@
+nav {
+    height: 1fr;
+    width: 230px;
+    position: fixed;
+    right: 8px;
+    overflow-x: hidden;
+    margin-right: -220px;
+    transition-duration: 1s;
+    display: grid;
+    grid-template-columns: 15px 1fr;
+    padding-left: 8px;
+    gap: 20px;
+    border-left: 3px;
+    margin-top: 5px;
+
+}
+nav:hover {
+    margin-right: 0px;
+}
+nav h3 {
+    word-wrap: break-word;
+    grid-row: 1 / 4;
+}
+main {
+    margin-right: auto;
+    margin-left: auto;
+}
+body {
+    display: grid;
+    grid-template-rows: 100px, 1fr;
+    height: 100%;
+    margin: 0px;
+}
+.new-post-form {
+    display: grid;
+    grid-template-columns: 250px 900px;
+    grid-template-rows: repeat(1fr 6);
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    gap:10px;
+}
+.content {
+    display: flex;
+    grid-column: 2;
+    grid-row: 1/7;
+    align-items: flex-start;
+    flex-direction: column;
+}
+textarea {
+    width: 80%;
+    height: 100%;
+    max-width: 900px;
+}
+main li {
+    display: flex;
+    justify-content: flex-end;
+}
+.new-categories {
+    display: flex;
+    justify-content: space-around;
+}

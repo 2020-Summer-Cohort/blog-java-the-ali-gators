@@ -1,7 +1,11 @@
 package org.wcci.blog;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
+@Controller
 public class PostController {
     private CategoryStorage categoryStorage;
     private AuthorStorage authorStorage;
@@ -15,8 +19,8 @@ public class PostController {
         this.tagStorage = tagStorage;
         this.postStorage = postStorage;
     }
-
-    public String showSinglePost(String title, Model model) {
+    @GetMapping("/post/{title}")
+    public String showSinglePost(@PathVariable String title, Model model) {
         Post postToAdd = postStorage.findPostByTitle(title);
         model.addAttribute("post", postToAdd);
         model.addAttribute("categories", categoryStorage.getAllCategories());

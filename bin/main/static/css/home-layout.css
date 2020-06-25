@@ -1,0 +1,66 @@
+nav {
+    height: 1fr;
+    width: 230px;
+    position: fixed;
+    right: 8px;
+    overflow-x: hidden;
+    margin-right: -220px;
+    transition-duration: 1s;
+    display: grid;
+    grid-template-columns: 15px 1fr;
+    padding-left: 8px;
+    gap: 20px;
+    border-left: 3px;
+    margin-top: 5px;
+
+}
+nav:hover {
+    margin-right: 0px;
+}
+nav h3 {
+    word-wrap: break-word;
+    grid-row: 1 / 4;
+}
+body {
+    display: grid;
+    grid-template-rows: 100px, 1fr;
+    height: 100%;
+    margin: 0px;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 0px auto;
+    width: 80%;
+    max-width: 1200px;
+}
+.post {
+    padding: 5px;
+    padding-left: 10px;
+    margin: 5px;
+    transition-duration: 0.2s;
+}
+.post:hover {
+    padding: 10px;
+    margin: 5px;
+    transition-duration: 0.2s;
+}
+.new-post {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.items {
+    padding: 10px;
+}
+.item {
+    margin-top: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    transition-duration: 0.2s;
+}
+.item:hover {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition-duration: 0.2s;
+}

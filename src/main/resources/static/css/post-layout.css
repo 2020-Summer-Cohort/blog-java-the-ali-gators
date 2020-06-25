@@ -1,0 +1,72 @@
+nav {
+    height: 1fr;
+    width: 230px;
+    position: fixed;
+    right: 8px;
+    overflow-x: hidden;
+    margin-right: -220px;
+    transition-duration: 1s;
+    display: grid;
+    grid-template-columns: 15px 1fr;
+    padding-left: 8px;
+    gap: 20px;
+    border-left: 3px;
+    margin-top: 5px;
+
+}
+nav:hover {
+    margin-right: 0px;
+}
+nav h3 {
+    word-wrap: break-word;
+    grid-row: 1 / 4;
+}
+body {
+    display: grid;
+    grid-template-rows: 100px, 1fr;
+    height: 100%;
+    margin: 0px;
+}
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+p {
+    padding-right: 30px;
+    padding-left: 20px;
+    
+}
+header {
+    padding-right: 0px;
+}
+.blog-tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blog-title {
+    margin: 0px;
+    text-align: center;
+}
+.category {
+    margin: 0px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.blog-author {
+    text-align: center;
+    margin: 5px;
+}
+.publish-date {
+    text-align: center;
+    margin: 2px;
+}
+.tag {
+    padding: 8px;
+}
+.new-post {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

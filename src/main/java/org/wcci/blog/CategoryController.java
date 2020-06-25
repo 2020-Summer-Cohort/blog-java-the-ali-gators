@@ -2,6 +2,8 @@ package org.wcci.blog;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class CategoryController {
@@ -19,8 +21,8 @@ public class CategoryController {
         model.addAttribute("categories",
                 categoryStorage.getAllCategories());
     }
-
-    public String showSingleCategory(String category, Model model) {
+    @GetMapping("/{category}")
+    public String showSingleCategory(@PathVariable String category, Model model) {
         Category categoryToAdd = categoryStorage.findCategoryByName(category);
         model.addAttribute("category", categoryToAdd);
         model.addAttribute("categories", categoryStorage.getAllCategories());
