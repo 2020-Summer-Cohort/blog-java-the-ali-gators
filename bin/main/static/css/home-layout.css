@@ -35,6 +35,16 @@ main {
     width: 80%;
     max-width: 1200px;
 }
+@media only screen and (max-width: 800px){
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 550px){
+    main {
+        grid-template-columns: 1fr;
+    }
+}
 .post {
     padding: 5px;
     padding-left: 10px;
