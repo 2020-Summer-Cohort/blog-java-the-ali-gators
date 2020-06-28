@@ -1,25 +1,26 @@
-package org.wcci.blog;
+package org.wcci.blog.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-public class Tag {
+public class Author {
     @Id
     @GeneratedValue
     private long id;
     private String name;
-    @ManyToMany(mappedBy = "tags")
+    @OneToMany(mappedBy = "author")
     private Collection<Post> posts;
 
-    protected Tag() {
+    protected Author() {
     }
 
-    public Tag(String name) {
+    public Author(String name) {
+
         this.name = name;
     }
 
@@ -39,9 +40,9 @@ public class Tag {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Tag tag = (Tag) o;
-        return id == tag.id &&
-                Objects.equals(name, tag.name);
+        Author author = (Author) o;
+        return id == author.id &&
+                Objects.equals(name, author.name);
     }
 
     @Override

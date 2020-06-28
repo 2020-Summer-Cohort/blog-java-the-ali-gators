@@ -1,4 +1,4 @@
-package org.wcci.blog;
+package org.wcci.blog.entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,6 +12,7 @@ public class Post {
     @GeneratedValue
     private long id;
     private String title;
+    @Column(length = 2000)
     private String content;
     @ManyToOne
     private Author author;
@@ -62,6 +63,11 @@ public class Post {
         return tags;
     }
 
+    public String getFirstLine(){
+        String[] splitLines = content.split("\\. ");
+        return splitLines[0] + ".";
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -78,5 +84,9 @@ public class Post {
     @Override
     public int hashCode() {
         return Objects.hash(id, title, content, author, publishDate, category);
+    }
+
+    public void addTag(Tag tagToAdd) {
+        tags.add(tagToAdd);
     }
 }

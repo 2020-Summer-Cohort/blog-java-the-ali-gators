@@ -43,16 +43,16 @@ a:active, .new-post a:active {
 .publish-date {
     color: #CCC5B9;
 }
-.tag {
-    background-color: #403D39;
-}
-.tag a {
+.tag  {
     color: #EB5E28;
+    background-color: #403D39;
+    border-radius: 5px;
 }
-.tag a:hover {
+.tag:hover {
     color: #FFFCF2;
+    background-color: #4e4a45;
 }
-.tag a:active {
+.tag:active {
     color: #CCC5B9;
 }
 .new-post a {

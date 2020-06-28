@@ -1,9 +1,13 @@
-package org.wcci.blog;
+package org.wcci.blog.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.wcci.blog.storage.AuthorStorage;
+import org.wcci.blog.entities.Category;
+import org.wcci.blog.storage.CategoryStorage;
+import org.wcci.blog.storage.TagStorage;
 
 @Controller
 public class CategoryController {
@@ -17,13 +21,9 @@ public class CategoryController {
         this.tagStorage = tagStorage;
     }
 
-    public void displayAllCategories(Model model) {
-        model.addAttribute("categories",
-                categoryStorage.getAllCategories());
-    }
-    @GetMapping("/{category}")
-    public String showSingleCategory(@PathVariable String category, Model model) {
-        Category categoryToAdd = categoryStorage.findCategoryByName(category);
+    @GetMapping("/category/{categoryName}")
+    public String showSingleCategory(@PathVariable String categoryName, Model model) {
+        Category categoryToAdd = categoryStorage.findCategoryByName(categoryName);
         model.addAttribute("category", categoryToAdd);
         model.addAttribute("categories", categoryStorage.getAllCategories());
         model.addAttribute("tags", tagStorage.getAllTags());

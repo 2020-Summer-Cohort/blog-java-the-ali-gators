@@ -4,6 +4,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.ui.Model;
+import org.wcci.blog.controllers.TagsController;
+import org.wcci.blog.entities.Tag;
+import org.wcci.blog.storage.AuthorStorage;
+import org.wcci.blog.storage.CategoryStorage;
+import org.wcci.blog.storage.TagStorage;
 
 import java.util.Collections;
 

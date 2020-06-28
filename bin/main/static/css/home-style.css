@@ -44,8 +44,17 @@ a:active, .new-post a:active {
 .item {
     background-color: #403D39;
     text-align: center;
+    border-radius: 10px;
 }
 .item:hover {
     background-color: #4e4a45;
+    color: #FFFCF2;
+}
+.post {
+    background-color: #33312E;
+    border-radius: 10px;
+}
+.post:hover {
+    background-color: #403D39;
     color: #FFFCF2;
 }

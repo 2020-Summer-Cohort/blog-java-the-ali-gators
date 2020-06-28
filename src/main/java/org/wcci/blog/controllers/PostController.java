@@ -1,9 +1,14 @@
-package org.wcci.blog;
+package org.wcci.blog.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.wcci.blog.entities.Post;
+import org.wcci.blog.storage.AuthorStorage;
+import org.wcci.blog.storage.CategoryStorage;
+import org.wcci.blog.storage.PostStorage;
+import org.wcci.blog.storage.TagStorage;
 
 @Controller
 public class PostController {

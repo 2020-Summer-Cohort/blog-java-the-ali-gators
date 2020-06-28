@@ -40,3 +40,26 @@ form {
 .new-post a {
     color: #EB5E28;
 }
+button {
+    color: #CCC5B9;
+    background-color: #403D39;
+    border-radius: 5px;
+    border-style: none;
+} 
+button:hover {
+    background-color: #5a554f;
+}
+button:active {
+    background-color: #CCC5B9;
+    color: #403D39;
+}
+input, textarea, select {
+    background-color: #403D39;
+    color: #FFFCF2;
+    border-style: none;   
+    border-radius: 5px;
+}
+::placeholder {
+    color: #CCC5B9;
+}
+

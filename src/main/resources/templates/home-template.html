@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/home-layout.css" />
+    <link rel="stylesheet" href="/css/home-style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Author's Posts</title>
+  </head>
+  <body>
+  <header>
+    <h1><a th:href="@{'/'}">The Foxes Blog</a></h1>
+    <nav>
+      <h3 class="nav-title">NAVIGATION</h3>
+      <div>
+        <section>
+          <h4 class="home">
+            <a th:href="@{'/'}">Home</a>
+          </h4>
+        </section>
+        <section>
+          <h4 class="new-post">
+            <a th:href="@{'/new-post'}">Create New Post</a>
+          </h4>
+        </section>
+        <section>
+          <h4>Categories</h4>
+          <ul class="categories">
+            <li th:each="category:${categories}">
+              <a th:text="${category.name}" th:href="@{'/category/' + ${category.name}}">Category</a></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Authors</h4>
+          <ul class="authors">
+            <li th:each="author:${authors}">
+              <a th:text="${author.name}" th:href="@{'/authors/' + ${author.name}}">Author</a></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Tags</h4>
+          <ul class="tags">
+            <li th:each="tag:${tags}">
+              <a th:text="'#' + ${tag.name}" th:href="@{'/tag/' + ${tag.name}}">Tag</a></li>
+          </ul>
+        </section>
+      </div>
+    </nav>
+  </header>
+    <main>
+      <section>
+        <h2>Categories</h2>
+        <div class="items">
+          <a th:each="category:${categories}" th:href="@{'/category/' + ${category.name}}">
+            <div class="item">
+              <h3 th:text="${category.name}">Category</h3>
+            </div>
+          </a>
+        </div>
+      </section>
+      <section>
+        <h2>Authors</h2>
+        <div class="items">
+          <a th:each="author:${authors}" th:href="@{'/authors/' + ${author.name}}">
+            <div class="item">
+              <h3 th:text="${author.name}">Author</h3>
+            </div>
+          </a>
+        </div>
+      </section>
+      <section>
+        <h2>Tags</h2>
+        <div class="items">
+          <a th:each="tag:${tags}" th:href="@{'/tag/' + ${tag.name}}">
+            <div class="item">
+              <h3 th:text="'#' + ${tag.name}">Tag</h3>
+            </div>
+          </a>
+        </div>
+      </section>
+      <section class="posts">
+        <h2> All Posts</h2>
+        <a th:each="post:${posts}" th:href="@{'/post/' + ${post.title}}">
+          <div class="post">
+            <h3 th:text="${post.title}">Post Title</h3>
+            <h4 th:text="${post.author.getName()}">Author</h4>
+            <sub th:text="${post.publishDate}">Publish Date</sub>
+            <p th:text="${post.getFirstLine()}">
+              First Line of Post
+            </p>
+          </div>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

@@ -36,6 +36,7 @@ a:active, .new-post a:active {
 }
 .post {
     background-color: #33312E;
+    border-radius: 10px;
 }
 .post:hover {
     background-color: #403D39;

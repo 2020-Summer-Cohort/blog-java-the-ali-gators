@@ -1,5 +1,10 @@
-package org.wcci.blog;
+package org.wcci.blog.storage;
 
+import org.springframework.stereotype.Service;
+import org.wcci.blog.storage.repositories.PostRepository;
+import org.wcci.blog.entities.Post;
+
+@Service
 public class PostStorage {
     PostRepository postRepo;
 
@@ -13,5 +18,9 @@ public class PostStorage {
 
     public void addPost(Post post) {
         postRepo.save(post);
+    }
+
+    public Iterable<Post> getAllPosts() {
+        return postRepo.findAll();
     }
 }

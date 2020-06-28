@@ -1,6 +1,8 @@
-package org.wcci.blog;
+package org.wcci.blog.storage;
 
 import org.springframework.stereotype.Service;
+import org.wcci.blog.storage.repositories.CategoryRepository;
+import org.wcci.blog.entities.Category;
 
 @Service
 public class CategoryStorage {
@@ -15,7 +17,7 @@ public class CategoryStorage {
     }
 
     public Category findCategoryByName(String name) {
-        return null;
+        return categoryRepo.findByName(name);
     }
 
     public void addCategory(Category category) {

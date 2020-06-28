@@ -5,6 +5,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.wcci.blog.entities.Author;
+import org.wcci.blog.entities.Category;
+import org.wcci.blog.entities.Post;
+import org.wcci.blog.entities.Tag;
+import org.wcci.blog.storage.repositories.AuthorRepository;
+import org.wcci.blog.storage.repositories.CategoryRepository;
+import org.wcci.blog.storage.repositories.PostRepository;
+import org.wcci.blog.storage.repositories.TagRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

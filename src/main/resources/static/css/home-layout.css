@@ -2,10 +2,10 @@ nav {
     height: 1fr;
     width: 230px;
     position: fixed;
-    right: 8px;
+    right: 0px;
     overflow-x: hidden;
-    margin-right: -220px;
-    transition-duration: 1s;
+    margin-right: -210px;
+    transition-duration: 0.8s;
     display: grid;
     grid-template-columns: 15px 1fr;
     padding-left: 8px;
@@ -45,6 +45,9 @@ main {
         grid-template-columns: 1fr;
     }
 }
+.posts {
+    grid-column: 1/4;
+}
 .post {
     padding: 5px;
     padding-left: 10px;
@@ -73,4 +76,10 @@ main {
     padding-top: 10px;
     padding-bottom: 10px;
     transition-duration: 0.2s;
+}
+.post h3,.post h4 {
+    margin: 5px;
+}
+.post sub {
+    margin-left: 10px;
 }

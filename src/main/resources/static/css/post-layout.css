@@ -2,17 +2,16 @@ nav {
     height: 1fr;
     width: 230px;
     position: fixed;
-    right: 8px;
+    right: 0px;
     overflow-x: hidden;
-    margin-right: -220px;
-    transition-duration: 1s;
+    margin-right: -210px;
+    transition-duration: 0.8s;
     display: grid;
     grid-template-columns: 15px 1fr;
     padding-left: 8px;
     gap: 20px;
     border-left: 3px;
     margin-top: 5px;
-
 }
 nav:hover {
     margin-right: 0px;
@@ -65,8 +64,25 @@ header {
 }
 .tag {
     padding: 8px;
+    transition-duration: 0.2s;
+    margin-top: 24px;
+    margin-right: 5px;
+}
+
+.tag:hover {
+    padding: 12px;
+    margin-top: 20px;
 }
 .new-post {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.blog-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.tag h5 {
+    padding:0px;
+    margin: 0px;
 }

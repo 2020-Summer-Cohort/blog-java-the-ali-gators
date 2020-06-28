@@ -2,10 +2,10 @@ nav {
     height: 1fr;
     width: 230px;
     position: fixed;
-    right: 8px;
+    right: 0px;
     overflow-x: hidden;
-    margin-right: -220px;
-    transition-duration: 1s;
+    margin-right: -210px;
+    transition-duration: 0.8s;
     display: grid;
     grid-template-columns: 15px 1fr;
     padding-left: 8px;
@@ -47,4 +47,10 @@ main {
 .new-post {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.post h3,.post h4 {
+    margin: 5px;
+}
+.post sub {
+    margin-left: 10px;
 }

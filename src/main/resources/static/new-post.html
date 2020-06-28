@@ -60,14 +60,18 @@
                 <select name="author" id="new-post-author-input">               
                     <option value="Alisyn">Alisyn</option>
                 </select></li>
+                <li><label for="new-post-tags-input" class="form__label">Tags: </label>
+                  <select type="text" name="tags" id="new-post-tags-input" multiple>
+                    <option value="BadStereotype">#BadStereoType</option>
+                    <option value="WhatACutie">#WhatACutie</option>
+                  </select></li>
                 <li><label for="new-post-title-input" class="form__label">Title: </label>
                 <input type="text" name="title" id="new-post-title-input"></li>
                 <li><label for="new-post-date-input" class="form__label">Date: </label>
-                <input type="date" name="publishDate" id="new-post-date-input"></li>
-                <li><label for="new-post-tags-input" class="form__label">Tags: </label>
-                <input type="text" name="tags" id="new-post-tags-input" placeholder="Separate tags with a space"></li>
+                <input type="date" name="publishDate" id="new-post-date-input"></li>             
                 <li class="content"><label for="new-post-content-input" class="form__label">Content: </label>
                 <textarea name="content" id="new-post-content-input" placeholder="Content"></textarea></li>
+                
                 <li><button type="submit">Submit</button></li>
             </form>
         </section>

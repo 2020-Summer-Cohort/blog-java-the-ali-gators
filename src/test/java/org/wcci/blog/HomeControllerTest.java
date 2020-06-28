@@ -4,6 +4,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.ui.Model;
+import org.wcci.blog.controllers.HomeController;
+import org.wcci.blog.storage.AuthorStorage;
+import org.wcci.blog.storage.CategoryStorage;
+import org.wcci.blog.storage.TagStorage;
 
 import java.util.Collections;
 
@@ -23,7 +27,7 @@ public class HomeControllerTest {
         mockCategoryStorage = mock(CategoryStorage.class);
         mockAuthorStorage = mock(AuthorStorage.class);
         mockTagStorage = mock(TagStorage.class);
-        underTest = new HomeController(mockCategoryStorage, mockAuthorStorage, mockTagStorage);
+        underTest = new HomeController(mockCategoryStorage, mockAuthorStorage, mockTagStorage, postStorage);
         model = Mockito.mock(Model.class);
     }
 
