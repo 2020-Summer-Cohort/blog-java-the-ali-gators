@@ -57,8 +57,19 @@ public class Populator implements CommandLineRunner {
                         "passing on this movie but otherwise Nick Wilde and Finnick are cute and " +
                         "very charming.", alisyn, "2020-06-25", inMedia, stereoType);
         postRepo.save(post1);
-
-
+        Post post2 = new Post("Breath of the Wild Review", "I have been playing Zelda: Breath of the Wild " +
+                "lately and the foxes in this game are too cute to describe. I have spent hours just chasing them " +
+                "around and taking pictures of them. I have found I can get a lot closer if I quietly approach them " +
+                "but once they start running away their is no way to keep up with them on foot, and they are scared " +
+                "of horses so that is out of the question. For those of you who like to fox watch I highly recommend " +
+                "this game. 10/10", sarah, "2020-06-29", inMedia, whatACutie, foxBehaviors);
+        postRepo.save(post2);
+        Post post3 = new Post("Sighting at Deer Creek", "I went out camping with my family recently and got to witness" +
+                " the magesty of foxes first hand. I think the cutie was out chasing rabbits but I wasnt able to get " +
+                "close enough to confirm. It was very quick so keeping track of it was hard enough. I only got to peek " +
+                "at it for a few minutes but it was a great addition to our trip.", emma, "2020-06-28",
+                sightings, foxBehaviors, whatACutie, saveTheFoxes);
+        postRepo.save(post3);
     }
 
 }
