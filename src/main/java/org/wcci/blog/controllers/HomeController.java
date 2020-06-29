@@ -21,6 +21,7 @@ public class HomeController {
         this.tagStorage = tagStorage;
         this.postStorage = postStorage;
     }
+
     @GetMapping({"", "/"})
     public String ShowHome(Model model) {
         model.addAttribute("categories", categoryStorage.getAllCategories());

@@ -21,6 +21,7 @@ public class TagsController {
         this.authorStorage = authorStorage;
         this.tagStorage = tagStorage;
     }
+
     @GetMapping("/tag/{tagName}")
     public String showSingleTag(@PathVariable String tagName, Model model) {
         model.addAttribute("tag", tagStorage.getTagByName(tagName));

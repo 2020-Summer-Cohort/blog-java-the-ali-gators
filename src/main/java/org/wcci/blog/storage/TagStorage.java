@@ -1,8 +1,8 @@
 package org.wcci.blog.storage;
 
 import org.springframework.stereotype.Service;
-import org.wcci.blog.storage.repositories.TagRepository;
 import org.wcci.blog.entities.Tag;
+import org.wcci.blog.storage.repositories.TagRepository;
 
 @Service
 public class TagStorage {
@@ -20,7 +20,7 @@ public class TagStorage {
         return tagRepo.findAll();
     }
 
-    public void addTag(Tag tag){
+    public void addTag(Tag tag) {
         tagRepo.save(tag);
     }
 }

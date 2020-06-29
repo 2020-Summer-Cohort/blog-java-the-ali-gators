@@ -21,6 +21,7 @@ public class AuthorController {
         this.authorStorage = authorStorage;
         this.tagStorage = tagStorage;
     }
+
     @GetMapping("/authors/{name}")
     public String showSingleAuthor(@PathVariable String name, Model model) {
         Author author = authorStorage.findAuthorByName(name);

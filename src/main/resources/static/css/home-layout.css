@@ -14,19 +14,23 @@ nav {
     margin-top: 5px;
 
 }
+
 nav:hover {
     margin-right: 0px;
 }
+
 nav h3 {
     word-wrap: break-word;
     grid-row: 1 / 4;
 }
+
 body {
     display: grid;
     grid-template-rows: 100px, 1fr;
     height: 100%;
     margin: 0px;
 }
+
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -35,51 +39,62 @@ main {
     width: 80%;
     max-width: 1200px;
 }
-@media only screen and (max-width: 800px){
+
+@media only screen and (max-width: 800px) {
     main {
         grid-template-columns: 1fr 1fr;
     }
 }
-@media only screen and (max-width: 550px){
+
+@media only screen and (max-width: 550px) {
     main {
         grid-template-columns: 1fr;
     }
 }
+
 .posts {
     grid-column: 1/4;
 }
+
 .post {
     padding: 5px;
     padding-left: 10px;
     margin: 5px;
     transition-duration: 0.2s;
 }
+
 .post:hover {
     padding: 10px;
     margin: 5px;
     transition-duration: 0.2s;
 }
+
 .new-post {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 .items {
     padding: 10px;
 }
+
 .item {
     margin-top: 5px;
     padding-top: 1px;
     padding-bottom: 1px;
     transition-duration: 0.2s;
 }
+
 .item:hover {
     padding-top: 10px;
     padding-bottom: 10px;
     transition-duration: 0.2s;
 }
-.post h3,.post h4 {
+
+.post h3, .post h4 {
     margin: 5px;
 }
+
 .post sub {
     margin-left: 10px;
 }

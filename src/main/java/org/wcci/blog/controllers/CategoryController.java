@@ -4,8 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.wcci.blog.storage.AuthorStorage;
 import org.wcci.blog.entities.Category;
+import org.wcci.blog.storage.AuthorStorage;
 import org.wcci.blog.storage.CategoryStorage;
 import org.wcci.blog.storage.TagStorage;
 

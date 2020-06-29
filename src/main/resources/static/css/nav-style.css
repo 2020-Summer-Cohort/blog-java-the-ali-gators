@@ -3,45 +3,56 @@ body {
     color: #FFFCF2;
     font-family: 'Nunito', sans-serif;
 }
+
 p {
     font-family: 'Open Sans', sans-serif;
 }
+
 nav {
     background-color: #252422;
     border-color: #EB5E28;
     border-style: solid;
 }
+
 nav ul {
     list-style: none;
     padding-left: 15px;
 }
+
 nav h4 {
     margin-top: 2px;
     margin-bottom: 2px;
 }
+
 header {
     background-color: #403D39;
     padding-left: 30px;
 }
+
 a {
     color: #FFFCF2;
     text-decoration: none;
 }
-a:hover ,.new-post a:hover{
+
+a:hover, .new-post a:hover {
     color: #CCC5B9;
-    
+
 }
+
 a:active, .new-post a:active {
     color: #EB5E28;
 }
+
 .post {
     background-color: #33312E;
     border-radius: 10px;
 }
+
 .post:hover {
     background-color: #403D39;
     color: #FFFCF2;
 }
+
 .new-post a {
     color: #EB5E28;
 }

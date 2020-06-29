@@ -2,87 +2,93 @@
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/new-post-layout.css" />
-    <link rel="stylesheet" href="/css/new-post-style.css" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/css/new-post-layout.css"/>
+    <link rel="stylesheet" href="/css/new-post-style.css"/>
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Open+Sans&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Open+Sans&display=swap"
+            rel="stylesheet"
     />
     <title>Create New Post</title>
-  </head>
-  <body>
-  <header>
-      <h1><a th:href="@{'/'}">The Foxes Blog</a></h1>
-      <nav>
-          <h3 class="nav-title">NAVIGATION</h3>
-          <div>
-              <section>
-                  <h4 class="home">
-                      <a th:href="@{'/'}">Home</a>
-                  </h4>
-              </section>
-              <section>
-                  <h4 class="new-post">
-                      <a th:href="@{'/new-post'}">Create New Post</a>
-                  </h4>
-              </section>
-              <section>
-                  <h4>Categories</h4>
-                  <ul class="categories">
-                      <li th:each="categoryNav:${categories}">
-                          <a th:text="${categoryNav.name}" th:href="@{'/category/' + ${categoryNav.name}}">Category</a></li>
-                  </ul>
-              </section>
-              <section>
-                  <h4>Authors</h4>
-                  <ul class="authors">
-                      <li th:each="author:${authors}">
-                          <a th:text="${author.name}" th:href="@{'/authors/' + ${author.name}}">Author</a></li>
-                  </ul>
-              </section>
-              <section>
-                  <h4>Tags</h4>
-                  <ul class="tags">
-                      <li th:each="tag:${tags}">
-                          <a th:text="'#' + ${tag.name}" th:href="@{'/tag/' + ${tag.name}}">Tag</a></li>
-                  </ul>
-              </section>
-          </div>
-      </nav>
-  </header>
-    <main>
-        <section>
-            <h2>New Post</h2>
-            <form action="/post/add" method="POST" class="new-post-form">
-                <li><label for="new-post-category-input" class="form__label">Category: </label>
-                <select name="category" id="new-post-category-input">               
+</head>
+<body>
+<header>
+    <h1><a th:href="@{'/'}">The Foxes Blog</a></h1>
+    <nav>
+        <h3 class="nav-title">NAVIGATION</h3>
+        <div>
+            <section>
+                <h4 class="home">
+                    <a th:href="@{'/'}">Home</a>
+                </h4>
+            </section>
+            <section>
+                <h4 class="new-post">
+                    <a th:href="@{'/new-post'}">Create New Post</a>
+                </h4>
+            </section>
+            <section>
+                <h4>Categories</h4>
+                <ul class="categories">
+                    <li th:each="categoryNav:${categories}">
+                        <a th:text="${categoryNav.name}" th:href="@{'/category/' + ${categoryNav.name}}">Category</a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h4>Authors</h4>
+                <ul class="authors">
+                    <li th:each="author:${authors}">
+                        <a th:text="${author.name}" th:href="@{'/authors/' + ${author.name}}">Author</a></li>
+                </ul>
+            </section>
+            <section>
+                <h4>Tags</h4>
+                <ul class="tags">
+                    <li th:each="tag:${tags}">
+                        <a th:text="'#' + ${tag.name}" th:href="@{'/tag/' + ${tag.name}}">Tag</a></li>
+                </ul>
+            </section>
+        </div>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>New Post</h2>
+        <form action="/post/add" method="POST" class="new-post-form">
+            <li><label for="new-post-category-input" class="form__label">Category: </label>
+                <select name="category" id="new-post-category-input">
                     <option th:each="category:${categories}" th:value="${category.name}"
-                    th:text="${category.name}">Category</option>
+                            th:text="${category.name}">Category
+                    </option>
                 </select></li>
-                <li><label for="new-post-author-input" class="form__label">Author: </label>
-                <select name="author" id="new-post-author-input">               
+            <li><label for="new-post-author-input" class="form__label">Author: </label>
+                <select name="author" id="new-post-author-input">
                     <option th:each="author:${authors}" th:value="${author.name}"
-                    th:text="${author.name}">Author</option>
+                            th:text="${author.name}">Author
+                    </option>
                 </select></li>
-                <li><label for="new-post-tags-input" class="form__label">Tags: </label>
-                  <select type="text" name="tags" id="new-post-tags-input" multiple>
+            <li><label for="new-post-tags-input" class="form__label">Tags: </label>
+                <select type="text" name="tags" id="new-post-tags-input" multiple>
                     <option th:each="tag:${tags}" th:value="${tag.name}"
-                    th:text="'#' + ${tag.name}">Hashtag</option>
-                  </select></li>
-                <li><label for="new-post-title-input" class="form__label">Title: </label>
+                            th:text="'#' + ${tag.name}">Hashtag
+                    </option>
+                </select></li>
+            <li><label for="new-post-title-input" class="form__label">Title: </label>
                 <input type="text" name="title" id="new-post-title-input"></li>
-                <li><label for="new-post-date-input" class="form__label">Date: </label>
-                <input type="date" name="publishDate" id="new-post-date-input"></li>             
-                <li class="content"><label for="new-post-content-input" class="form__label">Content: </label>
+            <li><label for="new-post-date-input" class="form__label">Date: </label>
+                <input type="date" name="publishDate" id="new-post-date-input"></li>
+            <li class="content"><label for="new-post-content-input" class="form__label">Content: </label>
                 <textarea name="content" id="new-post-content-input" placeholder="Content"></textarea></li>
-                
-                <li><button type="submit">Submit</button></li>
-            </form>
-        </section>
-        <div class="new-categories">
+
+            <li>
+                <button type="submit">Submit</button>
+            </li>
+        </form>
+    </section>
+    <div class="new-categories">
         <section class="new-category">
             <form action="/category/add" method="POST" class="new-category-form">
                 <label for="new-category-input" class="form__label">Add Category: </label>
@@ -105,6 +111,6 @@
             </form>
         </section>
     </div>
-    </main>
-  </body>
+</main>
+</body>
 </html>

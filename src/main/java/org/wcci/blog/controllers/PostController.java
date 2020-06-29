@@ -24,6 +24,7 @@ public class PostController {
         this.tagStorage = tagStorage;
         this.postStorage = postStorage;
     }
+
     @GetMapping("/post/{title}")
     public String showSinglePost(@PathVariable String title, Model model) {
         Post postToAdd = postStorage.findPostByTitle(title);

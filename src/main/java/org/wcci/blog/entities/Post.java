@@ -63,7 +63,7 @@ public class Post {
         return tags;
     }
 
-    public String getFirstLine(){
+    public String getFirstLine() {
         String[] splitLines = content.split("\\. ");
         return splitLines[0] + ".";
     }

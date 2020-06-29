@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.wcci.blog.controllers.HomeController;
 import org.wcci.blog.storage.AuthorStorage;
 import org.wcci.blog.storage.CategoryStorage;
+import org.wcci.blog.storage.PostStorage;
 import org.wcci.blog.storage.TagStorage;
 
 import java.util.Collections;
@@ -19,6 +20,7 @@ public class HomeControllerTest {
     private CategoryStorage mockCategoryStorage;
     private AuthorStorage mockAuthorStorage;
     private TagStorage mockTagStorage;
+    private PostStorage mockPostStorage;
     private HomeController underTest;
     private Model model;
 
@@ -27,7 +29,8 @@ public class HomeControllerTest {
         mockCategoryStorage = mock(CategoryStorage.class);
         mockAuthorStorage = mock(AuthorStorage.class);
         mockTagStorage = mock(TagStorage.class);
-        underTest = new HomeController(mockCategoryStorage, mockAuthorStorage, mockTagStorage, postStorage);
+        mockPostStorage = mock(PostStorage.class);
+        underTest = new HomeController(mockCategoryStorage, mockAuthorStorage, mockTagStorage, mockPostStorage);
         model = Mockito.mock(Model.class);
     }
 

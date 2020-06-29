@@ -1,8 +1,8 @@
 package org.wcci.blog.storage;
 
 import org.springframework.stereotype.Service;
-import org.wcci.blog.storage.repositories.PostRepository;
 import org.wcci.blog.entities.Post;
+import org.wcci.blog.storage.repositories.PostRepository;
 
 @Service
 public class PostStorage {

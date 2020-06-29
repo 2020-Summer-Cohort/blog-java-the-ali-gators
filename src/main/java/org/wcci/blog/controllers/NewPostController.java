@@ -26,6 +26,7 @@ public class NewPostController {
         this.tagStorage = tagStorage;
         this.postStorage = postStorage;
     }
+
     @GetMapping("/new-post")
     public String NewPostPage(Model model) {
         model.addAttribute("categories", categoryStorage.getAllCategories());
@@ -33,9 +34,10 @@ public class NewPostController {
         model.addAttribute("authors", authorStorage.getAllAuthors());
         return "new-post-template";
     }
+
     @PostMapping("/post/add")
     public String createNewPost(String category, String author, String tags,
-                                String title, String publishDate, String content){
+                                String title, String publishDate, String content) {
         Category category1 = categoryStorage.findCategoryByName(category);
         Author author1 = authorStorage.findAuthorByName(author);
         Post postToAdd = new Post(title, content, author1, publishDate, category1);
@@ -49,24 +51,27 @@ public class NewPostController {
         postStorage.addPost(postToAdd);
         return "redirect:/post/" + postToAdd.getTitle();
     }
+
     @PostMapping("/category/add")
-    public String createNewCategory(String category){
-        if (categoryStorage.findCategoryByName(category)== null){
+    public String createNewCategory(String category) {
+        if (categoryStorage.findCategoryByName(category) == null) {
             Category categoryToAdd = new Category(category);
             categoryStorage.addCategory(categoryToAdd);
         }
         return "redirect:/new-post";
     }
+
     @PostMapping("/author/add")
-    public String createNewAuthor(String author){
-        if (authorStorage.findAuthorByName(author)== null){
+    public String createNewAuthor(String author) {
+        if (authorStorage.findAuthorByName(author) == null) {
             Author authorToAdd = new Author(author);
             authorStorage.addAuthor(authorToAdd);
         }
         return "redirect:/new-post";
     }
+
     @PostMapping("/tag/add")
-    public String createNewTag(String tag){
+    public String createNewTag(String tag) {
         if (tagStorage.getTagByName(tag) == null) {
             Tag tagToAdd = new Tag(tag);
             tagStorage.addTag(tagToAdd);
