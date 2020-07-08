@@ -2,7 +2,7 @@ nav {
     height: 1fr;
     width: 230px;
     position: fixed;
-    right: 0px;
+    right: 0;
     overflow-x: hidden;
     margin-right: -210px;
     transition-duration: 0.8s;
@@ -16,7 +16,7 @@ nav {
 }
 
 nav:hover {
-    margin-right: 0px;
+    margin-right: 0;
 }
 
 nav h3 {
@@ -26,16 +26,16 @@ nav h3 {
 
 body {
     display: grid;
-    grid-template-rows: 100px, 1fr;
+    grid-template-rows: 100px 1fr;
     height: 100%;
-    margin: 0px;
+    margin: 0;
 }
 
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
-    margin: 0px auto;
+    margin: 0 auto;
     width: 80%;
     max-width: 1200px;
 }
@@ -57,8 +57,7 @@ main {
 }
 
 .post {
-    padding: 5px;
-    padding-left: 10px;
+    padding: 5px 5px 5px 10px;
     margin: 5px;
     transition-duration: 0.2s;
 }
